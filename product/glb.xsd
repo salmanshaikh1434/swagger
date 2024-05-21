@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="glbData">
+  <xsd:element name="glbData" msdata:IsDataSet="true">
+    <xsd:complexType>
+      <xsd:choice maxOccurs="unbounded">
+        <xsd:element name="glb" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="glaccount">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="varchar"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="date" type="xsd:datetime"/>
+              <xsd:element name="store">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:integer"/>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="department">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:integer"/>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="lamount">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:decimal">
+                    <xsd:totalDigits value="decimal"/>
+                    <xsd:fractionDigits value="decimal"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="ramount">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:decimal">
+                    <xsd:totalDigits value="decimal"/>
+                    <xsd:fractionDigits value="decimal"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="records">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:integer"/>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="freeze" type="xsd:boolean"/>
+              <xsd:element name="tstamp" type="xsd:datetime"/>
+            </xsd:sequence>
+            <xsd:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

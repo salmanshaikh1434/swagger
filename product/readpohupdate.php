@@ -1,0 +1,55 @@
+<?php
+header("Access-Control_allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+include_once '../config/core.php';
+include_once '../shared/utilities.php';
+include_once '../config/database.php';
+include_once '../objects/spiritspoh.php';
+
+$database = new Database();
+$db = $database->getConnection();
+
+$product = new spiritspoh($db);
+$getStartdate=isset($_GET['startdate']) ? $_GET['startdate'] : 0;
+$getVendor=isset($_GET['vendor']) ? $_GET['vendor'] : 0;
+$getStore=isset($_GET['store']) ? $_GET['store'] : 0;
+$getOrder=isset($_GET['order']) ? $_GET['order'] : 0;
+$getInvoice=isset($_GET['invoice']) ? $_GET['invoice'] : '';
+$getStatus=isset($_GET['status']) ? $_GET['status'] : '';
+
+$stmt = $product->readPohUpdate($getStartdate,$getStore,$getVendor,$getInvoice,$getOrder,$getStatus);
+$num = $stmt->rowCount();
+
+if($num>0){
+  
+    $products_arr=array();
+    $products_arr["records"]=array();
+	
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+		extract($row);
+        
+		$product_item=array(
+			"order" => $order,
+			"status" => $status,
+			"contact" => $contact,
+			"promdate" => $promdate,
+			"rcvdate" => $rcvdate,
+			"customer" => $customer,
+			"total" => $total,
+			"store" => $store,
+			"vcode" => $vcode
+       );
+  
+        array_push($products_arr["records"], $product_item);
+    }
+  
+    http_response_code(200);
+    echo json_encode($products_arr);
+}else{
+	http_response_code(404);
+	echo json_encode(
+		array("message" => "NOT FOUND.")
+	);
+}
+?>

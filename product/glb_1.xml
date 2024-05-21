@@ -1,0 +1,57 @@
+<VFPData>
+	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="VFPData">
+		<xsd:element name="VFPData" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="glb" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="glaccount">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="5"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="date" type="xsd:date"/>
+								<xsd:element name="store" type="xsd:int"/>
+								<xsd:element name="department" type="xsd:int"/>
+								<xsd:element name="lamount">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="19"/>
+											<xsd:fractionDigits value="4"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="ramount">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="19"/>
+											<xsd:fractionDigits value="4"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="records" type="xsd:int"/>
+								<xsd:element name="freeze" type="xsd:boolean"/>
+								<xsd:element name="tstamp" type="xsd:datetime"/>
+							</xsd:sequence>
+							<xsd:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resultcur>
+		<glaccount>01501</glaccount>
+		<date>2021-12-30</date>
+		<store>1</store>
+		<department>351</department>
+		<lamount>4082.2400</lamount>
+		<ramount>0.0000</ramount>
+		<records>118</records>
+		<freeze>false</freeze>
+		<tstamp>2021-12-30T14:21:28</tstamp>
+	</resultcur>
+</VFPData>

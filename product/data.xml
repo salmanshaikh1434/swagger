@@ -1,0 +1,15 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<glb>
+ <resultcur>
+ <glaccount>12345</glaccount>
+ <date>2024-03-21T12:00:00</date>
+ <store>1</store>
+ <department>2</department>
+ <lamount>100.00</lamount>
+ <ramount>200.00</ramount>
+ <records>10</records>
+ <freeze>true</freeze>
+ <tstamp>2024-03-21T12:00:00</tstamp>
+ </resultcur>
+</glb>

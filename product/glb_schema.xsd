@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="data"><xs:complexType><xs:sequence>
+                <xs:element name="glaccount" type="xs:integer" />
+                <xs:element name="store" type="xs:string" />
+                <xs:element name="department" type="xs:string" />
+                <xs:element name="date" type="xs:dateTime" />
+                <xs:element name="lamount" type="xs:decimal" />
+                <xs:element name="ramount" type="xs:decimal" />
+                <xs:element name="records" type="xs:integer" />
+                <xs:element name="freeze" type="xs:integer" />
+                <xs:element name="tstamp" type="xs:dateTime" />
+            </xs:sequence></xs:complexType></xs:element></xs:schema>

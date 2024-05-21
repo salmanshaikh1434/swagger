@@ -1,0 +1,6 @@
+vendor/
+uploads/
+swagger-ui/
+models/
+config/
+shared/
